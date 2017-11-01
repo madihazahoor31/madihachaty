@@ -48,7 +48,7 @@ public class RegisterActivity extends AppCompatActivity {
     public void onRegisterNextClick(View view) {
         emailstring = email.getText().toString();
         phonestring = phone.getText().toString();
-        Log.e("ERROR","reached at buttonclick");
+        Log.e("ERROR","reached at buttonclick ok");
         if (emailstring.equals(null)) {
             Toast.makeText(this, "email not entered", Toast.LENGTH_LONG).show();
             flag = 1;
@@ -59,7 +59,7 @@ public class RegisterActivity extends AppCompatActivity {
         }
         if (flag == 0) {
             askforotp();
-            Log.e("ERROR","reached at backaskforotp");
+            Log.e("ERROR","reached   jhbjhbat backaskforotp");
         }
     }
 
