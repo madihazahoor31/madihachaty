@@ -95,11 +95,14 @@ public class RegisterActivity extends AppCompatActivity {
             HttpPost post = new HttpPost(SERVER_ADDRESS + "otpgenerator.php");
             try {
                 post.setEntity(new UrlEncodedFormEntity(data_to_send));
+                Log.e("ERROR"," before response");
 
                 HttpResponse httpResponse = client.execute(post);
                 HttpEntity entity = httpResponse.getEntity();
                 Log.e("ERROR","reached at response");
                 result = EntityUtils.toString(entity);
+                Log.e("ERROR",result);
+
                 JSONObject jsonObject = new JSONObject(result);
 
                 if (jsonObject.length() == 0) {
@@ -108,7 +111,7 @@ public class RegisterActivity extends AppCompatActivity {
 
                     if (jsonObject.has("otp")) {
                         otp = jsonObject.getString("otp");
-                        Log.e("OTP=","otp");
+                        Log.e("OTP=",otp.toString());
 
                     }
                     else {
